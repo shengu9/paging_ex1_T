@@ -1,10 +1,16 @@
 package org.spring.pagingpj.entity;
 
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "paging_tb_1")
 public class BoardEntity {
@@ -28,7 +34,7 @@ public class BoardEntity {
 
   @CreationTimestamp
   @Column(insertable = false)
-  private LocalDateTime updateTiem;
+  private LocalDateTime updateTime;
 
 
 }
