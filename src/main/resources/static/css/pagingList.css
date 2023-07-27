@@ -1,0 +1,41 @@
+@import url(/css/common/reset.css);
+@import url(/css/common/header.css);
+.boardList{
+  width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.boardList .boardList-con{
+  flex-basis: 1400px;
+    padding:20px;
+    box-sizing:border-box;
+     background-color:#ebf9f8;
+}
+
+.boardList .boardList-con table{
+    width:100%;
+}
+
+table, td ,th{
+ border-collapse: collapse;
+ border:1px solid #555555;
+ text-align:center;
+}
+
+.boardList .boardList-con table thead tr:nth-child(1) th{
+      background-color:#555555;
+      color:#ffffff;
+      font-size:20px;
+      padding:10px 0;
+}
+
+.boardList .boardList-con table thead tr:nth-child(2) th{
+      background-color:#00a9cc;
+      color:#ffffff;
+      padding:8px 0;
+}
+
+.boardList .boardList-con table tbody tr td{
+      padding:5px 0;
+}

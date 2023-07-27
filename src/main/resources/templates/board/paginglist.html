@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>boardList</title>
+  <link rel="stylesheet" th:href="@{/css/boardList.css}">
+</head>
+<body>
+<div th:replace="~{fragments/common/header :: headerFragment}"></div>
+<div class="boardList">
+  <div class="boardList-con">
+    <table>
+      <thead>
+      <tr>
+        <th colspan="5">게시글 목록</th>
+      </tr>
+      <tr>
+        <th>아이디</th>
+        <th>글제목</th>
+        <th>글내용</th>
+        <th>작성자</th>
+        <th>작성시간</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="board: ${boardList}">
+        <td th:text="${board.id}"></td>
+        <td th:text="${board.boardTitle}"></td>
+        <td th:text="${board.boardContent}"></td>
+        <td th:text="${board.boardWriter}"></td>
+        <td th:text="${#temporals.format(board.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
