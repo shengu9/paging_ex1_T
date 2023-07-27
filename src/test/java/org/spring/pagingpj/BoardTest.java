@@ -77,7 +77,7 @@ public class BoardTest {
     Page<BoardEntity> boardEntities =            // 페이지수, 한페이지 보이는View수 , 정렬
             boardRepository.findAll( PageRequest.of(page, pageView, Sort.by(Sort.Direction.DESC, "id"))  );
     // Entity -> Dto  변환
-    // View return
+    // View returnm
 //    Page<BoardDto> boardDtos =  boardEntities.map(board ->
 //                        new BoardDto(board.getId(), board.getBoardWriter(),
 //                        board.getBoardTitle(),  board.getBoardContent()));

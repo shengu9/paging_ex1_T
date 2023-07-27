@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>boardList</title>
-  <link rel="stylesheet" th:href="@{/css/boardList.css}">
+  <title>pagingList</title>
+  <link rel="stylesheet" th:href="@{/css/pagingList.css}">
 </head>
 <body>
 <div th:replace="~{fragments/common/header :: headerFragment}"></div>
-<div class="boardList">
-  <div class="boardList-con">
+<div class="pagingList">
+  <div class="pagingList-con">
     <table>
       <thead>
       <tr>
@@ -32,6 +32,48 @@
       </tr>
       </tbody>
     </table>
+    <div class="paging">
+      <ul>
+        <li>
+          <!-- 현재페이지가  첫번째 페이지이면   span표시 -->
+          <span th:if="${1==boardList.pageable.pageNumber+1}" class="span0">START</span>
+          <!-- 처음 페이지가 아니면  a -->
+          <span th:unless="${1==boardList.pageable.pageNumber+1}">
+            <a th:href="@{/board/pagingList(page=0)}" class="span1">처음</a>
+          </span>
+        </li>
+        <li>
+          <!-- 이전페이지가  첫번째 페이지이면   span표시 -->
+          <span th:if="${1==boardList.pageable.pageNumber+1}"  class="span0">PRE</span>
+          <span th:unless="${1==boardList.pageable.pageNumber+1}">
+            <!--boardList.pageable.pageNumber 현재페이지 -1 -->
+            <a th:href="@{/board/pagingList(page=${boardList.pageable.pageNumber-1})}"   class="span1">이전</a>
+          </span>
+        </li>
+        <li class="block">
+          <!-- block  -->
+        </li>
+
+        <li>
+          <!-- 현재페이지가 마지막 페이지이면   span표시 -->
+          <span th:if="${boardList.totalPages ==boardList.pageable.pageNumber+1}"  class="span0">NEXT</span>
+          <!-- 현재페이지가 마지막 페이지아니면    a 표시 현재페이지 +1 -->
+          <span th:unless="${boardList.totalPages ==boardList.pageable.pageNumber+1}">
+             <a th:href="@{/board/pagingList(page=${boardList.pageable.pageNumber+1})}"   class="span1">다음</a>
+          </span>
+        </li>
+        <li>
+          <!-- 현재페이지가 마지막 페이지이면   span표시 -->
+          <span th:if="${boardList.totalPages ==boardList.pageable.pageNumber+1}"  class="span0">END</span>
+          <!-- 현재페이지가 마지막 페이지가 아니면 마지막 페이지로 이동 해라  a -->
+          <span th:unless="${boardList.totalPages ==boardList.pageable.pageNumber+1}">
+            <a th:href="@{/board/pagingList(page=${boardList.totalPages-1})}"  class="span1">마지막</a>
+          </span>
+        </li>
+
+
+      </ul>
+    </div>
   </div>
 </div>
 </body>
