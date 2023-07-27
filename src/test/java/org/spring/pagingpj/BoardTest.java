@@ -25,9 +25,9 @@ public class BoardTest {
   void insert() {
 
     BoardDto boardDto = new BoardDto();
-    boardDto.setBoardWriter("작성자4");
-    boardDto.setBoardTitle("제목4");
-    boardDto.setBoardContent("내용4");
+    boardDto.setBoardWriter("작성자43");
+    boardDto.setBoardTitle("제목43");
+    boardDto.setBoardContent("내용43");
 
     BoardEntity boardEntity = BoardEntity.toBoardEntity(boardDto);
     Long boarId = boardRepository.save(boardEntity).getId();
@@ -72,7 +72,7 @@ public class BoardTest {
   @Test
   void paging(){
 
-    int page =1 ;    //현재 페이지 -> 실제페이지는0부터  ,DB테이블의 기본 1부터
+    int page =0 ;    //현재 페이지 -> 실제페이지는1부터  ,DB테이블의 기본 0부터
     int pageView =6; // 한 페이지에 보여줄 글 갯수
     Page<BoardEntity> boardEntities =            // 페이지수, 한페이지 보이는View수 , 정렬
             boardRepository.findAll( PageRequest.of(page, pageView, Sort.by(Sort.Direction.DESC, "id"))  );

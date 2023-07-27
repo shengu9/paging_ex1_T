@@ -18,6 +18,10 @@
   color:#fff;
   text-align:center;
 }
+.header .nav h1.logo a{
+  background-color:#000000;
+  color:#fff;
+}
 .header .nav gnb{
 
 }
