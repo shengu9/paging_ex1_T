@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="header" th:fragment="headerFragment">
+  <div class="nav">
+    <h1 class="logo">LOGO</h1>
+    <div class="gnb">
+      <ul>
+        <li><a th:href="@{/board/boardList}">boardList</a></li>
+        <li><a th:href="@{/board/pagingList}">pagingList</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</html>

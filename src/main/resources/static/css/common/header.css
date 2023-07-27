@@ -1,0 +1,42 @@
+.header{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:20px  0 10px;
+  background-color:#1c4b91
+}
+.header .nav{
+  display:flex;
+  justify-content:space-between;
+  flex-basis: 1400px;
+ background-color:#1c4b91ee;
+}
+.header .nav h1.logo{
+  flex-basis: 120px;
+  line-height:60px;
+  background-color:#000000;
+  color:#fff;
+  text-align:center;
+}
+.header .nav gnb{
+
+}
+.header .nav .gnb ul{
+    display:flex;
+    justify-content:space-between;
+    gap:10px
+    padding:10px 0;
+}
+.header .nav .gnb ul li{
+    line-height:40px;
+      background-color:#000000;
+      color:#fff;
+}
+.header .nav .gnb ul li a{
+  box-sizing:border-box;
+   padding:0 10px ;
+     background-color:#000000;
+     color:#fff;
+}
+
+
